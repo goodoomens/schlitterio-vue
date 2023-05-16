@@ -2,7 +2,7 @@
 
 # Schlitterio
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/066f7bd3-6f6f-43b4-9afc-898897320605/deploy-status)](https://app.netlify.com/sites/schlitterio/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9afec5c1-0d7b-469a-90ec-03da90a4c759/deploy-status)](https://app.netlify.com/sites/schlitterio/deploys)
 
 Because I love old school games, this game was a nice little exercise to further deepen my understanding of Vue. I invite you to either try the live demo or set up your own version of the game and modify it to your liking.
 
