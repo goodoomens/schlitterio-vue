@@ -1,6 +1,6 @@
 <template>
   <div class="game-score">
-    <SvgIcon type="mdi" :size="28" :path="mdiFoodApple" />
+    <SvgIcon type="mdi" :size="24" :path="mdiFoodApple" />
     {{ score }}
   </div>
 </template>
@@ -28,13 +28,11 @@ export default {
 
 <style>
 .game-score {
-  justify-self: flex-end;
-
   display: flex;
   align-items: center;
   gap: 0.6rem;
 
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--col-food-apple);
 }

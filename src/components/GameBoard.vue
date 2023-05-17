@@ -51,7 +51,6 @@ export default {
 
   grid-column: 1 / -1;
   align-self: center;
-  justify-self: center;
 
   box-shadow: 0 0.5rem 2rem -1rem rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
@@ -68,21 +67,12 @@ export default {
   border-radius: 0.25rem;
 }
 .snake-head {
-  background-color: var(--col-prim-shad1);
+  background-color: var(--col-sec);
 }
 .snake-body {
   background-color: var(--col-prim);
 }
 .food {
   background-color: var(--col-food-apple);
-}
-@media (max-width: 380px) {
-  .game-board {
-    width: auto;
-  }
-  .tile {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
 }
 </style>

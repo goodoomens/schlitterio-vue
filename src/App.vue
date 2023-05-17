@@ -1,12 +1,13 @@
 <template>
   <div class="game-container" :style="`--tile-count: ${tileCount};`">
-    <header class="game-header">
-      <GameLogo />
-      <GameScore :score="score.pts" />
-    </header>
+    <GameLogo />
 
     <div class="game-gui">
-      <button class="btn btn-start" @click="startGame">Start</button>
+      <div class="game-ctrl">
+        <button class="btn btn-start" @click="startGame">Start</button>
+        <GameScore :score="score.pts" />
+      </div>
+
       <HighscoreList
         :highscores="highscores"
         :lastPlayedScore="lastPlayedScore"
@@ -15,12 +16,14 @@
 
     <GameBoard :tileCount="tileCount" :snake="snake" :food="food" />
 
-    <button class="btn btn-ctrl" @click="changeDirection('left')">
-      <SvgIcon type="mdi" :size="42" :path="mdiChevronLeft" />
-    </button>
-    <button class="btn btn-ctrl" @click="changeDirection('right')">
-      <SvgIcon type="mdi" :size="42" :path="mdiChevronRight" />
-    </button>
+    <div class="game-btn-wrapper">
+      <button class="btn btn-ctrl" @click="changeDirection('left')">
+        <SvgIcon type="mdi" :size="42" :path="mdiChevronLeft" />
+      </button>
+      <button class="btn btn-ctrl" @click="changeDirection('right')">
+        <SvgIcon type="mdi" :size="42" :path="mdiChevronRight" />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -234,17 +237,13 @@ export default {
 
 /* Variables */
 :root {
-  --col-prim: #74b816;
-  --col-prim-shad0: #3a5c0b;
-  --col-prim-shad1: #5c940d;
-  --col-prim-shad2: #e3f1d0;
-  --col-prim-shad3: #f1f8e8;
+  --col-prim: #91dd2e;
+  --col-sec: #37a35f;
   --col-food-apple: #e03131;
   --col-light-grey: #f3f3f3;
-  --col-mid-grey: #adb5bd;
-
   --col-txt-prim: #ffffff;
-  --col-txt-sec: #495057;
+  --col-txt-sec: #c0c0c0;
+  --col-txt-dark: #444444;
 }
 
 /* Global styles */
@@ -260,50 +259,49 @@ html {
   overflow: hidden;
 }
 body {
-  background-color: var(--col-prim-shad2);
+  background-color: var(--col-light-grey);
   font-family: "Inter", sans-serif;
 }
 
 html,
 body,
 .game-container {
-  height: 100svh;
+  height: 100dvh;
 }
 
 /* Layout */
 .game-container {
   margin: auto;
   padding: 2rem;
-  max-width: 56rem;
+  max-width: 70rem;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 100fr 1fr;
-  justify-content: center;
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .game-container > * {
   min-width: 0;
 }
-.game-header {
-  grid-column: 1 / -1;
-
+.game-gui {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.game-gui {
-  grid-column: 1 / -1;
-
+.game-ctrl {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game-btn-wrapper {
+  display: flex;
+  gap: 1rem;
 }
 
 /* Buttons */
 .btn {
   background-color: var(--col-prim);
   border: 0;
-  border-bottom: 0.5rem solid var(--col-prim-shad1);
+  border-bottom: 0.5rem solid var(--col-sec);
   border-radius: 1rem;
   color: white;
 }
@@ -312,24 +310,30 @@ body,
   outline-offset: 0.25rem;
 }
 .btn:active {
-  border-bottom: 0.25rem solid var(--col-prim-shad1);
+  border-bottom: 0.25rem solid var(--col-sec);
 }
 .btn-start {
-  justify-self: flex-start;
-  align-self: center;
-  padding: 1.2rem 2.4rem;
+  padding: 1rem 2rem;
 
   font-size: 1.6rem;
   font-weight: 600;
   text-transform: uppercase;
 }
 .btn-ctrl {
+  width: 100%;
   padding: 1rem;
-  align-self: flex-end;
 }
+
+/* Media queries */
 @media (max-width: 380px) {
   html {
     font-size: 50%;
+  }
+  .game-container {
+    gap: 1rem;
+  }
+  .game-ctrl {
+    flex-direction: row;
   }
 }
 </style>

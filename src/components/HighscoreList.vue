@@ -34,13 +34,10 @@ export default {
 
 <style>
 .highscore-list {
-  align-self: flex-end;
-  justify-self: flex-end;
-
   list-style: none;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--col-prim-shad0);
+  color: var(--col-txt-dark);
 
   display: flex;
   flex-direction: column;
@@ -53,6 +50,7 @@ export default {
   border-radius: 0.5rem;
 
   font-weight: 800;
+  color: var(--col-txt-sec);
 
   display: flex;
   align-items: center;
@@ -60,12 +58,9 @@ export default {
 }
 
 .highscore-item {
-  padding: 0.6rem;
+  padding: 0.2rem 0;
   display: flex;
   align-items: center;
   gap: 1.2rem;
-}
-.highscore-item:not(:last-child) {
-  border-bottom: 1px solid var(--col-prim-shad0);
 }
 </style>

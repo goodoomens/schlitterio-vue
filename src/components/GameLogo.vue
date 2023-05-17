@@ -11,7 +11,7 @@
     </picture>
     <div class="game-logo-text">
       <h1 class="game-logo-title">Schlitterio</h1>
-      <h2 class="game-logo-subtitle">Grab them tasty applez!</h2>
+      <h2 class="game-logo-subtitle">Nom nom tasty applez!</h2>
     </div>
   </div>
 </template>
@@ -24,10 +24,9 @@ export default {
 
 <style>
 .game-logo {
-  justify-self: flex-start;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 .game-logo-img {
   display: block;
@@ -40,13 +39,13 @@ export default {
   align-items: center;
 }
 .game-logo-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: var(--col-prim-shad0);
+  color: var(--col-prim);
 }
 .game-logo-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  color: var(--col-prim-shad1);
+  color: var(--col-txt-sec);
 }
 </style>
