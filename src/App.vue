@@ -18,10 +18,10 @@
 
     <div class="game-btn-wrapper">
       <button class="btn btn-ctrl" @click="changeDirection('left')">
-        <SvgIcon type="mdi" :size="42" :path="mdiChevronLeft" />
+        <SvgIcon type="mdi" :size="42" :path="mdiRotateLeft" />
       </button>
       <button class="btn btn-ctrl" @click="changeDirection('right')">
-        <SvgIcon type="mdi" :size="42" :path="mdiChevronRight" />
+        <SvgIcon type="mdi" :size="42" :path="mdiRotateRight" />
       </button>
     </div>
   </div>
@@ -33,7 +33,7 @@ import GameLogo from "@/components/GameLogo";
 import GameScore from "@/components/GameScore";
 import HighscoreList from "@/components/HighscoreList";
 import GameBoard from "@/components/GameBoard";
-import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
+import { mdiRotateLeft, mdiRotateRight } from "@mdi/js";
 
 import helpersMixin from "@/mixins/helpersMixin";
 import methodsMixin from "@/mixins/methodsMixin";
@@ -71,8 +71,8 @@ export default {
       lastPlayedScore: null,
 
       // Icons
-      mdiChevronLeft,
-      mdiChevronRight,
+      mdiRotateLeft,
+      mdiRotateRight,
     };
   },
   mounted() {
@@ -233,7 +233,12 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/inter.woff2") format("woff2"),
+    url("./fonts/inter.woff") format("woff"),
+    url("./fonts/inter.ttf") format("truetype");
+}
 
 /* Variables */
 :root {
@@ -260,7 +265,7 @@ html {
 }
 body {
   background-color: var(--col-light-grey);
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", Fallback, sans-serif;
 }
 
 html,
